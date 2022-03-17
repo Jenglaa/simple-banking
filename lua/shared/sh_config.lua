@@ -18,7 +18,7 @@ SimpleBanking.Config["business_ranks_overrides"] = {
         ['boss'] = true,
     },
     ['burgershot'] = {
-        ['boss'] = true,
+        ['ceo'] = true,
     },
     ['vlada'] = {
         ['boss'] = true,
