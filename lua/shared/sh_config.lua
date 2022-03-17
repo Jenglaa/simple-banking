@@ -10,6 +10,7 @@ SimpleBanking.Config["business_ranks"] = { -- what ranks can see the society acc
     ['owner'] = true,
     ['chief'] = true,
     ['director'] = true,
+    ['ceo'] = true
 }
 
 SimpleBanking.Config["business_ranks_overrides"] = {

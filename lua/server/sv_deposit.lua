@@ -30,10 +30,12 @@ AddEventHandler('qb-banking:server:Deposit', function(account, amount, note, fSt
     end
 
     if account == "business"  then
+        TriggerClientEvent("qb-banking:client:Notify", src, "error", "inside business") -- first changes
         local job = Player.PlayerData.job
         local job_grade = job.grade.name
 
         if (not SimpleBanking.Config["business_ranks"][string.lower(job_grade)] and not SimpleBanking.Config["business_ranks_overrides"][string.lower(job.name)]) then
+            TriggerClientEvent("qb-banking:client:Notify", src, "error", "businness ranks error 1") -- second changes
             return
         end
 
@@ -41,6 +43,7 @@ AddEventHandler('qb-banking:server:Deposit', function(account, amount, note, fSt
         local grade = string.lower(job_grade)
 
         if (SimpleBanking.Config["business_ranks_overrides"][low] and not SimpleBanking.Config["business_ranks_overrides"][low][grade]) then
+            TriggerClientEvent("qb-banking:client:Notify", src, "error", "businness ranks error 2") -- third changes
             return
         end
 
