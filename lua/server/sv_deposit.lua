@@ -42,10 +42,10 @@ AddEventHandler('qb-banking:server:Deposit', function(account, amount, note, fSt
         local low = string.lower(job.name)
         local grade = string.lower(job_grade)
 
-        if (SimpleBanking.Config["business_ranks_overrides"][low] and not SimpleBanking.Config["business_ranks_overrides"][low][grade]) then
-            TriggerClientEvent("qb-banking:client:Notify", src, "error", "businness ranks error 2") -- third changes
-            return
-        end
+        -- if (SimpleBanking.Config["business_ranks_overrides"][low] and not SimpleBanking.Config["business_ranks_overrides"][low][grade]) then
+            -- TriggerClientEvent("qb-banking:client:Notify", src, "error", "businness ranks error 2") -- third changes
+            -- return
+        -- end
 
 
         local result = MySQL.Sync.fetchAll('SELECT * FROM society WHERE name= ?', {job.name})
