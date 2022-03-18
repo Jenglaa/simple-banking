@@ -1,6 +1,3 @@
-local QBCore = exports['qb-core']:GetCoreObject()
-
-
 RegisterServerEvent('qb-banking:server:Deposit')
 AddEventHandler('qb-banking:server:Deposit', function(account, amount, note, fSteamID)
     local src = source
