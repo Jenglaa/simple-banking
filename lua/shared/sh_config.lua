@@ -13,9 +13,9 @@ SimpleBanking.Config["business_ranks"] = { -- what ranks can see the society acc
     ['ceo'] = true
 }
 
-SimpleBanking.Config["business_ranks_overrides"] = {
+SimpleBanking.Config["business_ranks_overrides"] = { --what ranks can withdraw/deposit from society account
     ['police'] = {
-        ['boss'] = true,
+        ['chief'] = true,
     },
     ['burgershot'] = {
         ['ceo'] = true,
@@ -24,7 +24,7 @@ SimpleBanking.Config["business_ranks_overrides"] = {
         ['boss'] = true,
     },
     ['ambulance'] = {
-        ['boss'] = true,
+        ['chief'] = true,
     },
     ['realestate'] = {
         ['boss'] = true,
