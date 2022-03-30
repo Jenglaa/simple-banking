@@ -38,6 +38,7 @@ lang["organization"] = "Organization Account";
 lang["deposit"] = "Deposit";
 lang["withdraw"] = "Withdrawal";
 lang["transfer"] = "Transfer";
+lang["Invoice"] = "Invoice";
 
 var relang = [];
 relang["Personal Account"] = "personal";

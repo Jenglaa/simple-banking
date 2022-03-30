@@ -22,8 +22,8 @@ AddEventHandler('qb-banking:server:Withdraw', function(account, amount, note, fS
         end
         local withdraw = math.floor(amount)
 
-        Player.Functions.AddMoney('cash', withdraw)
-        Player.Functions.RemoveMoney('bank', withdraw)
+        Player.Functions.AddMoney('cash', withdraw, "Withdraw from Bank")
+        Player.Functions.RemoveMoney('bank', withdraw, "Withdraw from Bank")
 
         AddTransaction(src, "personal", -amount, "withdraw", "N/A", (note ~= "" and note or "Isplačeno €"..format_int(amount).."."))
         RefreshTransactions(src)

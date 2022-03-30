@@ -21,11 +21,14 @@ AddEventHandler('qb-banking:server:Deposit', function(account, amount, note, fSt
     if account == "personal"  then
         local amt = math.floor(amount)
 
-        Player.Functions.RemoveMoney('cash', amt)
-        Wait(500)
-        Player.Functions.AddMoney('bank', amt)
-        RefreshTransactions(src)
-        AddTransaction(src, "personal", amount, "deposit", "N/A", (note ~= "" and note or "Deposited $"..format_int(amount).." cash."))
+        if(Player.Functions.RemoveMoney('cash', amt, 'Personal Deposit')) then
+            Wait(500)
+            Player.Functions.AddMoney('bank', amt, 'Personal Deposit')
+            RefreshTransactions(src)
+            AddTransaction(src, "personal", amount, "deposit", "N/A", (note ~= "" and note or "Deposited $"..format_int(amount).." cash."))
+        else
+            TriggerClientEvent("qb-banking:client:Notify", src, "error", "You can't afford this!") 
+        end
         return
     end
 
